@@ -1,0 +1,41 @@
+// clearfix
+//
+// source: http://nicolasgallagher.com/micro-clearfix-hack/
+//
+%clearfix
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+.clearfix
+  @extend %clearfix
+
+
+// responsive image
+//
+.img-responsive
+  display: block
+  max-width: 100%
+  height: auto
+
+
+// transition mixin
+//
+@mixin transition($args...)
+  -webkit-transition: $args
+  -moz-transition: $args
+  -ms-transition: $args
+  -o-transition: $args
+  transition: $args
+
+// example: http://sassmeister.com/gist/thomd/ceed387a5777769f1049
+.transition
+  @include transition(all 0.4s ease)
+
+.fade
+  opacity: 0
+  @include transition(opacity 0.4s ease)
+  &.in
+    opacity: 1
