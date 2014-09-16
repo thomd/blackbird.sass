@@ -21,13 +21,18 @@
   height: auto
 
 
+// make content of a fixed container vertical scrollable
+//
+.scrollable
+  overflow: scroll
+  overflow-x: hidden
+  -webkit-overflow-scrolling: touch
+
+
 // transition mixin
 //
 @mixin transition($args...)
   -webkit-transition: $args
-  -moz-transition: $args
-  -ms-transition: $args
-  -o-transition: $args
   transition: $args
 
 // example: http://sassmeister.com/gist/thomd/ceed387a5777769f1049
