@@ -40,3 +40,14 @@
 .fade.in {
   opacity: 1;
 }
+
+@font-face {
+  font-family: "foo";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/path/to/foo.eot");
+  src: url("/path/to/foo.eot?#iefix") format("embedded-opentype"), url("/path/to/foo.woff") format("woff"), url("/path/to/foo.ttf") format("truetype"), url("/path/to/foo.svg#foo") format("svg");
+}
+p {
+  font-family: foo, Helvetica, Arial, sans-serif;
+}
