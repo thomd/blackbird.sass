@@ -61,3 +61,60 @@
 @include font-face("foo", "/path/to/foo")
 p
   font-family: foo, Helvetica, Arial, sans-serif
+
+
+// nice radio-buttons
+//
+// usage:
+//     <input name="foo" value="foo1" id="foo-1" type="radio" checked />
+//     <label for="foo-1">foo 1</label>
+//     <input name="foo" value="foo2" id="foo-2" type="radio" />
+//     <label for="foo-2">foo 2</label>
+//
+$radio-color: rgba(0, 0, 0, 0.4)
+$radio-color-hover: #3384EF
+input[type=radio]
+  position: absolute
+  left: 0
+  top: 0
+  width: 24px
+  height: 24px
+  overflow: hidden
+  margin: 0
+  padding: 0
+  border: 0 none
+  outline: 0 none
+  opacity: 0
+  cursor: pointer
+  & + label:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    background: 0% 0% transparent
+    border-radius: 50%
+    width: 16px
+    height: 16px
+    box-sizing: border-box
+    border: 2px solid $radio-color
+  &:checked + label:before
+    border-color: $radio-color-hover
+  &:checked + label:after
+    content: ""
+    position: absolute
+    left: 5px
+    top: 5px
+    width: 6px
+    height: 6px
+    background: $radio-color-hover
+    border-radius: 50%
+  &:hover + label:before
+    border-color: $radio-color-hover
+  &:hover + label
+    color: $radio-color-hover
+  & + label
+    padding-left: 24px
+    position: relative
+    display: block
+    cursor: pointer
+
