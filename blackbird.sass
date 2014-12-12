@@ -33,6 +33,7 @@
 //
 @mixin transition($args...)
   -webkit-transition: $args
+  -o-transition: $args
   transition: $args
 
 // example: http://sassmeister.com/gist/thomd/ceed387a5777769f1049
@@ -118,3 +119,24 @@ input[type=radio]
     display: block
     cursor: pointer
 
+
+// transparent background mixin
+//
+
+@mixin transparent-background($opacity: 0.9)
+  &:before
+    position: absolute
+    top: 0
+    left: 0
+    content: ''
+    background: #fff
+    width: 100%
+    height: 100%
+    opacity: $opacity
+
+// example
+.my-text-container
+  position: absolute
+  width: 200px
+  height: 100px
+  @include transparent-background
