@@ -114,6 +114,8 @@ dd
       box-sizing: border-box
       border: 1px solid $color
       +transition(border-color 0.15s ease)
+    &:checked + label
+      color: $selected-color
     &:checked + label:before
       border-color: $selected-color
     &:checked + label:after
